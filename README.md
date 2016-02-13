@@ -38,3 +38,7 @@ python manage.py createsuperuser
 # Added Settings.py
 
 python ./manage.py runserver
+
+
+#Add in Angular 2 Client and Build
+https://github.com/mbalex99/newfamily-example

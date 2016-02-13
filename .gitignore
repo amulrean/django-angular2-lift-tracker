@@ -2,3 +2,5 @@
 _pycache_
 *.sqlite3
 **/migrations
+node_modules
+dist
