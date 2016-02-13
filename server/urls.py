@@ -1,4 +1,4 @@
-"""lift_tracker URL Configuration
+"""server URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from rest_framework import routers
-from lift_tracker.users import views
+from server.users import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
