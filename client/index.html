@@ -5,8 +5,9 @@
     <base href="/"/>
  
     <!-- 1. Load libraries -->
-    <script src="static/libs/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="static/libs/systemjs/dist/system.src.js"></script>
+    {% load staticfiles %}
+    <script src="{% static "libs/angular2/bundles/angular2-polyfills.js" %}"></script>
+    <script src="{% static "libs/systemjs/dist/system.src.js" %}"></script>
     <script>
     //configure system loader
     // Must Configure first to load modules properly
@@ -21,10 +22,15 @@
         }
       });
     </script>
-    <script src="static/libs/rxjs/bundles/Rx.js"></script>
-    <script src="static/libs/angular2/bundles/angular2.dev.js"></script>
-    <script src="static/libs/angular2/bundles/router.dev.js"></script>
- 
+    <script src="{% static "libs/rxjs/bundles/Rx.js" %}"></script>
+    <script src="{% static "libs/angular2/bundles/angular2.dev.js" %}"></script>
+    <script src="{% static "libs/angular2/bundles/router.dev.js" %}"></script>
+    
+    <!--<script src="{% static "libs/bootstrap/dist/js/bootstrap.min.js" %}"></script>-->
+    
+    <script src="{% static "app/css/app.css" %}"></script>
+    <script src="{% static "libs/bootstrap/dist/css/bootstrap.min.css" %}"></script>
+    
     <!-- 2. Configure SystemJS -->
     <script>
       System.import('app/bootstrap.js')
