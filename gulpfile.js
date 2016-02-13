@@ -64,3 +64,19 @@ gulp.task('build', function(callback){
 });
 
 gulp.task('default', ['build']);
+
+gulp.task('watch', function() {
+
+  // Watch .css files
+  gulp.watch('client/**/*.css', ['build']);
+
+  // Watch .js files
+  gulp.watch('client/**/*.ts', ['build']);
+
+  // Watch html files
+  gulp.watch('client/**/*.html', ['build']);
+  
+  // Watch json files
+  gulp.watch('client/**/*.json', ['build']);
+
+});

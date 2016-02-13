@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'systemjs',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'dist')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT='staticfiles'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "dist")
+]
+
+# SYSTEMJS_ENABLED = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),

@@ -5,15 +5,14 @@
     <base href="/"/>
  
     <!-- 1. Load libraries -->
-    <script src="libs/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="libs/systemjs/dist/system.src.js"></script>
-    <script src="libs/rxjs/bundles/Rx.js"></script>
-    <script src="libs/angular2/bundles/angular2.dev.js"></script>
-    <script src="libs/angular2/bundles/router.dev.js"></script>
- 
-    <!-- 2. Configure SystemJS -->
+    <script src="static/libs/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="static/libs/systemjs/dist/system.src.js"></script>
     <script>
-      System.config({
+    //configure system loader
+    // Must Configure first to load modules properly
+        System.config({
+        baseURL: 'static',
+        defaultJSExtensions: true,
         packages: {        
           app: {
             format: 'register',
@@ -21,10 +20,16 @@
           }
         }
       });
-      System.import('app/bootstrap')
-            .then(null, console.error.bind(console));
     </script>
+    <script src="static/libs/rxjs/bundles/Rx.js"></script>
+    <script src="static/libs/angular2/bundles/angular2.dev.js"></script>
+    <script src="static/libs/angular2/bundles/router.dev.js"></script>
  
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.import('app/bootstrap.js')
+            .then(null, console.error.bind(console));
+    </script> 
   </head>
   <!-- 3. Display the application -->
   <body>
