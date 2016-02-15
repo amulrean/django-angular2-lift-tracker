@@ -1,7 +1,8 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 
-import {Navbar} from '../layout/Navbar'
+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
+
 import {HomeComponent} from '../home/HomeComponent'
 import {AboutComponent} from '../about/AboutComponent'
 
@@ -11,14 +12,26 @@ import {AboutComponent} from '../about/AboutComponent'
 ])
 @Component({
     selector: 'my-app',
-    template: `<navbar></navbar>
-        <router-outlet></router-outlet>`,
-    directives: [ROUTER_DIRECTIVES, Navbar]
+    template: `
+        <section class="material-app-content">
+            <md-toolbar class="md-whiteframe-z1">
+                <nav class="md-toolbar-tools">
+                  <button md-button alt="Home" class="md-icon-button" [routerLink]="['/Home']"><i class="" md-icon>home</i></button>
+                  <h1 flex>Lift Tracker</h1>
+                  <button md-button [routerLink]="['/About']">About</button>
+                </nav>
+              </md-toolbar>
+            <md-content layout-padding layout="column">
+                <router-outlet></router-outlet>
+            </md-content>
+        </section>
+        `,
+    directives: [ROUTER_DIRECTIVES, MATERIAL_DIRECTIVES]
 })
-export class AppComponent { 
-    
-    constructor(){
+export class AppComponent {
+
+    constructor() {
         console.log("We are up and running!");
     }
-    
+
 }

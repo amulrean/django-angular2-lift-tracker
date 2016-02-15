@@ -1,46 +1,48 @@
 <html>
- 
-  <head>
-    <title>newfamily-example</title>
+
+<head>
+    <title>Lift Tracker</title>
     <base href="/"/>
- 
+
     <!-- 1. Load libraries -->
     {% load staticfiles %}
     <script src="{% static "libs/angular2/bundles/angular2-polyfills.js" %}"></script>
     <script src="{% static "libs/systemjs/dist/system.src.js" %}"></script>
     <script>
-    //configure system loader
-    // Must Configure first to load modules properly
+        //configure system loader
+        // Must Configure first to load modules properly
         System.config({
-        baseURL: 'static',
-        defaultJSExtensions: true,
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
+            baseURL: 'static',
+            defaultJSExtensions: true,
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            },
+            paths: {
+                'ng2-material/*': 'libs/ng2-material/*'
+            }
+        });
     </script>
     <script src="{% static "libs/rxjs/bundles/Rx.js" %}"></script>
     <script src="{% static "libs/angular2/bundles/angular2.dev.js" %}"></script>
     <script src="{% static "libs/angular2/bundles/router.dev.js" %}"></script>
-    
-    <script src="{% static "libs/material-design-lite/dist/material.min.js" %}"></script>
-    
-    <link rel="stylesheet" href="{% static "app/css/app.css" %}"></link>
-    <link rel="stylesheet" href="{% static "libs/material-design-lite/dist/material.min.css" %}"></link>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+
+    <link rel="stylesheet" href="{% static "app/css/app.css" %}">
+
+    <link rel="stylesheet" href="{% static "libs/ng2-material/dist/ng2-material.css" %}">
+    <link rel="stylesheet" href="{% static "libs/ng2-material/dist/font.css" %}">
+
     <!-- 2. Configure SystemJS -->
     <script>
-      System.import('app/bootstrap.js')
-            .then(null, console.error.bind(console));
-    </script> 
-  </head>
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
- 
+        System.import('app/bootstrap.js')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+<my-app>Loading...</my-app>
+</body>
+
 </html>

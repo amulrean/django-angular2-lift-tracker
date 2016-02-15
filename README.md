@@ -1,3 +1,23 @@
+## Requirements:
+- python
+- virtualenv wrapper
+- node
+- gulp
+
+## Dev Setup:
+- `$ mkvirtualenv lift-tracker`
+- `$ pip install -r requirements.txt`
+- `$ python manage.py migrate`
+- `$ npm install`
+
+## Dev Start:
+### Client
+- `$ gulp` (Runs build and watch)
+
+### Server
+- `$ workon lift-tracker`
+- `$ python manage.py runserver`
+
 Creation Steps:
 
 Installed Windows versions:
@@ -10,7 +30,7 @@ https://docs.djangoproject.com/en/1.9/howto/windows/
 Django Rest Framework Install:
 http://www.django-rest-framework.org/tutorial/quickstart/
 
-# Create the project directory
+Create the project directory
 mkdir django-lift-tracker
 cd django-lift-tracker
 
