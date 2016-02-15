@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 
+import {Navbar} from '../layout/Navbar'
 import {HomeComponent} from '../home/HomeComponent'
 import {AboutComponent} from '../about/AboutComponent'
 
@@ -10,8 +11,9 @@ import {AboutComponent} from '../about/AboutComponent'
 ])
 @Component({
     selector: 'my-app',
-    template: '<router-outlet></router-outlet>',
-    directives: [ROUTER_DIRECTIVES]
+    template: `<navbar></navbar>
+        <router-outlet></router-outlet>`,
+    directives: [ROUTER_DIRECTIVES, Navbar]
 })
 export class AppComponent { 
     

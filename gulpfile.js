@@ -26,7 +26,7 @@ gulp.task('clean', function(){
 
 
 var cssNPMDependencies = [
-    'bootstrap/dist/css/bootstrap.min.css',
+    'material-design-lite/dist/material.min.css',
 ] 
 /*
   jsNPMDependencies, sometimes order matters here! so becareful!
@@ -37,7 +37,7 @@ var jsNPMDependencies = [
     'rxjs/bundles/Rx.js',
     'angular2/bundles/angular2.dev.js',
     'angular2/bundles/router.dev.js',
-    'bootstrap/dist/js/bootstrap.min.js'
+    'material-design-lite/dist/material.min.js'
 ] 
 
 gulp.task('build:index', function(){
