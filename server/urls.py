@@ -16,11 +16,19 @@ Including another URLconf
 from django.conf.urls import url, include
 from rest_framework import routers
 from server.users import views
-from .views import IndexView
+from server.lift.views import LiftViewSet
+from server.lift_type.views import LiftTypeViewSet
+from server.lift_set.views import LiftSetViewSet
+
+from server.views import IndexView
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+
+router.register(r'lifts', LiftViewSet)
+router.register(r'lift-sets', LiftSetViewSet)
+router.register(r'lift-types', LiftTypeViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

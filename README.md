@@ -7,6 +7,8 @@
 ## Dev Setup:
 - `$ mkvirtualenv lift-tracker`
 - `$ pip install -r requirements.txt`
+- `$ python manage.py createsuperuser`
+- `$ python manage.py makemigrations`
 - `$ python manage.py migrate`
 - `$ npm install`
 
@@ -22,7 +24,7 @@ Creation Steps:
 
 Installed Windows versions:
 Node
-Python (withvirtualenv)
+Python (with virtualenv)
 
 Windows Install Django:
 https://docs.djangoproject.com/en/1.9/howto/windows/
