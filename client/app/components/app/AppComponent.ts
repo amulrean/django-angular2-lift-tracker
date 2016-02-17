@@ -4,10 +4,12 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 
 import {HomeComponent} from '../home/HomeComponent'
+import {LiftTypeComponent} from '../lift-types/lift-type.component'
 import {AboutComponent} from '../about/AboutComponent'
 
 @RouteConfig([
     {path: '/', component: HomeComponent, as: 'Home'},
+    {path: '/lift-type', component: LiftTypeComponent, as: 'LiftType'},
     {path: '/about', component: AboutComponent, as: 'About'},
 ])
 @Component({
@@ -18,6 +20,7 @@ import {AboutComponent} from '../about/AboutComponent'
                 <nav class="md-toolbar-tools">
                   <button md-button alt="Home" class="md-icon-button" [routerLink]="['/Home']"><i class="" md-icon>home</i></button>
                   <h1 flex>Lift Tracker</h1>
+                  <button md-button [routerLink]="['/LiftType']">Lift Types</button>
                   <button md-button [routerLink]="['/About']">About</button>
                 </nav>
               </md-toolbar>

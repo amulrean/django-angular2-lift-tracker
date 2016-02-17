@@ -38,6 +38,7 @@ var jsNPMDependencies = [
   'rxjs/bundles/Rx.js',
   'angular2/bundles/angular2.dev.js',
   'angular2/bundles/router.dev.js',
+  'angular2/bundles/http.dev.js',
   'ng2-material/**/*'
 ];
 
