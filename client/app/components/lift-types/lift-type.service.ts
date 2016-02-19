@@ -27,6 +27,27 @@ export class LiftTypeService {
             .catch(this.handleError)
     }
 
+    updateLiftType(liftType:LiftType):Observable<LiftType> {
+
+        let body = JSON.stringify(liftType);
+
+        return this.http.put(this._liftTypesUrl + liftType.id + '/', body)
+            .map(res => <LiftType> res.json())
+            .catch(this.handleError)
+    }
+
+    getLiftType(liftType:LiftType):Observable<LiftType> {
+        return this.http.get(this._liftTypesUrl + liftType.id + '/')
+            .map(res => <LiftType> res.json())
+            .catch(this.handleError)
+    }
+
+    deleteLiftType(liftType:LiftType):Observable<Response> {
+        return this.http.delete(this._liftTypesUrl + liftType.id + '/')
+            .map(res => res)
+            .catch(this.handleError)
+    }
+
     private handleError(error:Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
