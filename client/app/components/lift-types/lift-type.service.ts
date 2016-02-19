@@ -1,6 +1,7 @@
 import {Injectable}     from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {Headers, RequestOptions} from 'angular2/http';
+import {ExRequestOptions} from '../../bootstrap'
 import {LiftType}           from './lift-type.model';
 import {Observable}     from 'rxjs/Observable';
 
@@ -17,13 +18,11 @@ export class LiftTypeService {
             .catch(this.handleError);
     }
 
-    addLiftType(name:string):Observable<LiftType> {
+    addLiftType(liftType:LiftType):Observable<LiftType> {
 
-        let body = JSON.stringify({name});
-        let headers = new Headers({'Content-Type': 'application/json'});
-        let options = new RequestOptions({headers: headers});
+        let body = JSON.stringify(liftType);
 
-        return this.http.post(this._liftTypesUrl, body, options)
+        return this.http.post(this._liftTypesUrl, body)
             .map(res => <LiftType> res.json())
             .catch(this.handleError)
     }
