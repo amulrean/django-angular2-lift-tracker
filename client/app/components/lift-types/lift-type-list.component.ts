@@ -6,7 +6,15 @@ import {LiftTypeService}       from './lift-type.service';
     selector: 'lift-type-list',
     template: `
     <div layout="row">
-    <div flex="50" flex-xs="100" layout="column">
+    <div flex="80" flex-xs="100" layout="column">
+        <form>
+            New Lift Type:
+            <input [(ngModel)]="newLiftType.name" />
+            <button type="submit" (click)="addLiftType()">
+                Add Lift Type
+            </button>
+            <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+        </form>
         <md-card *ngFor="#liftType of liftTypes">
           <md-card-title>
             <md-card-title-text>
@@ -15,18 +23,9 @@ import {LiftTypeService}       from './lift-type.service';
             </md-card-title-text>
           </md-card-title>
           <md-card-actions layout="row" layout-align="end center">
-            <button md-button (click)="editLiftType(liftType)">Edit</button>
             <button md-button (click)="deleteLiftType(liftType)">Delete</button>
           </md-card-actions>
         </md-card>
-    </div>
-    <div flex="50" flex-xs="100" layout="column">
-      New Lift Type:
-      <input [(ngModel)]="newLiftType.name" />
-      <button (click)="addLiftType()">
-        Add Lift Type
-      </button>
-      <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
     </div>
     </div>
   `,
