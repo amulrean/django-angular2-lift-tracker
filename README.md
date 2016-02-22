@@ -20,11 +20,12 @@
 - `$ workon lift-tracker`
 - `$ python manage.py runserver`
 
+
 Creation Steps:
 
 Installed Windows versions:
 Node
-Python (with virtualenv)
+Python (withvirtualenv)
 
 Windows Install Django:
 https://docs.djangoproject.com/en/1.9/howto/windows/
@@ -32,7 +33,7 @@ https://docs.djangoproject.com/en/1.9/howto/windows/
 Django Rest Framework Install:
 http://www.django-rest-framework.org/tutorial/quickstart/
 
-Create the project directory
+# Create the project directory
 mkdir django-lift-tracker
 cd django-lift-tracker
 
