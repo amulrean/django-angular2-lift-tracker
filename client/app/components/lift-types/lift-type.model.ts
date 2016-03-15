@@ -5,6 +5,6 @@ export class LiftType {
 
   constructor(
   ) {
-    name = "";
+    this.name = "";
   }
 }
