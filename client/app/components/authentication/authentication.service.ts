@@ -10,7 +10,7 @@ export class AuthenticationService {
     constructor(private http:Http) {
     }
 
-    private _authenticationUrl = 'rest_auth/';
+    private _authenticationUrl = 'rest-auth/';
 
     login(loginUser:User):Observable<User> {
 
