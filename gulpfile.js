@@ -26,8 +26,7 @@ gulp.task('clean', function () {
 
 
 var cssNPMDependencies = [
-  'ng2-material/dist/ng2-material.css',
-  'ng2-material/dist/font.css'
+  'material-design-lite/material.min.css'
 ];
 /*
  jsNPMDependencies, sometimes order matters here! so becareful!
@@ -39,7 +38,7 @@ var jsNPMDependencies = [
   'angular2/bundles/angular2.dev.js',
   'angular2/bundles/router.dev.js',
   'angular2/bundles/http.dev.js',
-  'ng2-material/**/*'
+  'material-design-lite/material.min.js'
 ];
 
 gulp.task('build:index', function () {
@@ -71,7 +70,9 @@ gulp.task('build:index', function () {
 
 gulp.task('build:app', function () {
   var tsProject = ts.createProject('client/tsconfig.json');
-  var tsResult = gulp.src('client/**/*.ts')
+  var tsResult = gulp.src([
+    'node_modules/angular2/typings/browser.d.ts',
+    'client/**/*.ts'])
     .pipe(sourcemaps.init())
     .pipe(ts(tsProject));
   return tsResult.js

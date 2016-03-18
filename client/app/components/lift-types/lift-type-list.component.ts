@@ -1,5 +1,4 @@
 import {Component, OnInit} from 'angular2/core';
-import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 import {LiftType}              from './lift-type.model';
 import {LiftTypeService}       from './lift-type.service';
 @Component({
@@ -30,7 +29,7 @@ import {LiftTypeService}       from './lift-type.service';
     </div>
   `,
     styles: ['.error {color:red;}'],
-    directives: [MATERIAL_DIRECTIVES]
+    directives: []
 })
 
 export class LiftTypeListComponent implements OnInit {

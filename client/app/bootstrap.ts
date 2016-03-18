@@ -4,7 +4,6 @@ import {HTTP_PROVIDERS, Headers, BaseRequestOptions, RequestOptions}    from 'an
 import {CORE_DIRECTIVES} from 'angular2/common'
 import {ROUTER_BINDINGS, ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy} from 'angular2/router'
 import 'rxjs/Rx';
-import {MATERIAL_PROVIDERS} from 'ng2-material/all'
  
 import {AppComponent} from './components/app/AppComponent'
 
@@ -30,8 +29,6 @@ export class ExRequestOptions extends RequestOptions  {
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS,
     CORE_DIRECTIVES,
-    MATERIAL_PROVIDERS,
-    provide(LocationStrategy, {useClass: PathLocationStrategy}),
     HTTP_PROVIDERS,
     provide(RequestOptions, {useClass: ExRequestOptions})
 ]);

@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from 'angular2/core';
-import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 import {Lift}              from './lift.model';
 import {LiftService}       from './lift.service';
 @Component({
@@ -26,7 +25,7 @@ import {LiftService}       from './lift.service';
             </div>
         </md-whiteframe>
   `,
-    directives: [MATERIAL_DIRECTIVES]
+    directives: []
 })
 
 export class LiftCardComponent implements OnInit {

@@ -1,5 +1,4 @@
 import {Component, OnInit} from 'angular2/core';
-import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 import {Observable} from 'rxjs/Observable';
 
 import {EditItem} from '../app/edit-item.model';
@@ -18,12 +17,11 @@ import {LiftCardComponent} from './lift-card.component';
     </md-content>
   `,
     styles: ['.error {color:red;}'],
-    directives: [MATERIAL_DIRECTIVES, LiftCardComponent]
+    directives: [ LiftCardComponent]
 })
 
 export class LiftListComponent implements OnInit {
     constructor(private _liftService: LiftService) {
-        
     }
 
     errorMessage: string;
