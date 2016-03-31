@@ -25,6 +25,9 @@ import {MDL} from './../mdl/MaterialDesignLite';
                 </button>
                 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
             </form>
+            <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="logout()">
+                    Logout
+                </button>
         </div>
     </div>
     `,
@@ -52,11 +55,23 @@ export class LoginComponent implements OnInit {
         }
         this._authenticationService.login(this.loginUser)
             .subscribe(
-                user => this.loginSuccess(user),
+                resp => this.loginSuccess(resp),
                 error => this.errorMessage = <any>error);
     }
     
-    loginSuccess(user:User) {
-        console.log(user.username + " is logged in");
+    loginSuccess(resp) {
+        console.log(resp + " is logged in");
+        this.loginUser.key = resp.key;
+    }
+
+    logout() {
+        if (!this.loginUser.key ) {
+            this.errorMessage = "Can't logout";
+            return;
+        }
+        this._authenticationService.logout()
+            .subscribe(
+                resp => console.log(resp + " is logged out"),
+                error => this.errorMessage = <any>error);
     }
 }

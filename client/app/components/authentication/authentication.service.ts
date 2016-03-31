@@ -12,12 +12,18 @@ export class AuthenticationService {
 
     private _authenticationUrl = 'rest-auth/';
 
-    login(loginUser:User):Observable<User> {
+    login(loginUser:User):Observable<Object> {
 
         let body = JSON.stringify(loginUser);
 
         return this.http.post(this._authenticationUrl + "login/", body)
-            .map(res => <User> res.json())
+            .map(res => <Object> res.json())
+            .catch(this.handleError)
+    }
+
+    logout():Observable<void> {
+        return this.http.post(this._authenticationUrl + "logout/", "")
+            .map(res => res)
             .catch(this.handleError)
     }
 
